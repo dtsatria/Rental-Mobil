@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MobilController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\TransaksiController;
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -36,5 +39,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('mobil', MobilController::class);
+    Route::resource('customer', CustomerController::class);
+    Route::resource('transaksi', CustomerController::class);
 });
 require __DIR__.'/auth.php';

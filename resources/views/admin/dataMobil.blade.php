@@ -1,4 +1,7 @@
 @extends('admin.dashboard')
+@section('judulPage')
+Data Mobil
+@endsection
                 @section('adminSection')
                 <div class="p-6 text-gray-900">
                     

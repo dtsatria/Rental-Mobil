@@ -1,4 +1,8 @@
 @extends('admin.dashboard')
+@section('judulPage')
+CRUD Mobil
+@endsection
+
                 @section('adminSection')
                 <form method="POST" action="{{ route('mobil.store') }}">
                   @csrf

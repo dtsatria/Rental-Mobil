@@ -37,7 +37,7 @@ class AuthenticatedSessionController extends Controller
 
     // Periksa apakah pengguna adalah admin
     if ($user->email === $adminEmail) {
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin.dataMobil');
     }
 
     return redirect()->route('dashboard');

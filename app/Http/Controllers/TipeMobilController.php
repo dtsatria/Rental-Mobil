@@ -45,7 +45,8 @@ class TipeMobilController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $tipeMobil = TipeMobil::find($id);
+        return view('admin.editTipeMobil', compact('tipeMobil'));
     }
 
     /**
@@ -53,7 +54,8 @@ class TipeMobilController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $tipeMobil = TipeMobil::find($id);
+        return view('admin.editTipeMobil' , compact('tipeMobil'));
     }
 
     /**
@@ -61,7 +63,14 @@ class TipeMobilController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->validate($request,[
+    		'tipe' => 'required'
+    	]);
+
+        $tipeMobil = TipeMobil::find($id);
+        $tipeMobil->tipe = $request->tipe;
+        $tipeMobil->update();
+        return redirect('/tipemobil/create');
     }
 
     /**

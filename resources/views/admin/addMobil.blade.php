@@ -14,26 +14,25 @@ CRUD Mobil
                       <x-input-error :messages="$errors->get('merk')" class="mt-2" />
                   </div>
           
-                  <!-- Model -->
-                  {{-- <select id="model" class="block mt-1 w-full" name="model" required autocomplete="model">
-                    <option value="" selected>Pilih Model</option>
-                    @foreach($models as $model)
-                        <option value="{{ $model->id }}">{{ $model->name }}</option>
-                    @endforeach
-                </select> --}}
+            
                 <div class="mt-4">
-                  <x-input-label for="model" :value="__('Model')" />
-              
-                  <select id="model" class="block mt-1 w-full rounded-sm" name="model" :value="old('model')" required autocomplete="model">
-                      <option value="" selected>Pilih Tipe</option>
-                      <option value="Model1">Model 1</option>
-                      <option value="Model2">Model 2</option>
-                      <option value="Model3">Model 3</option>
-                      <!-- Tambahkan pilihan lainnya sesuai kebutuhan -->
-                  </select>
-              
-                  <x-input-error :messages="$errors->get('model')" class="mt-2" />
-              </div>
+                    <x-input-label for="model" :value="__('Model')" />
+                
+                    <select id="model" class="block mt-1 w-full rounded-sm" name="model" :value="old('model')" required autocomplete="model">
+                        <option value="" selected>Pilih Tipe</option>
+                
+                        <!-- Tambahkan pilihan lainnya sesuai kebutuhan -->
+                        
+                        @forelse ($tipeMobil as $key => $value)
+                            <option value="{{ $value->id }}">{{ $value->tipe }}</option>
+                        @empty
+                            <option>Tipe Mobil Tidak Ada</option>               
+                        @endforelse
+                    </select>
+                
+                    <x-input-error :messages="$errors->get('model')" class="mt-2" />
+                </div>
+                
 
 
                   <!-- Plat Nomor -->

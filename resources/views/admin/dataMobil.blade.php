@@ -10,6 +10,11 @@ Data Mobil
                       Add Mobil
                     </button>
                 </x-nav-link>
+                <x-nav-link :href="route('tipemobil.create')">
+                  <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                    Add Tipe Mobil
+                  </button>
+              </x-nav-link>
                 </div>
 
                 <div class="p-3">
@@ -21,7 +26,7 @@ Data Mobil
                                 <thead>
                                   <tr>
                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Merk</th>
-                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Model</th>
+                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Tipe</th>
                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Plat Nomor</th>
                                     <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Tarif/Hari</th>
                                     <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">Action</th>

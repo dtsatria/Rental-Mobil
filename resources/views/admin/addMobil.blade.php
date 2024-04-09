@@ -25,7 +25,7 @@ CRUD Mobil
                   <x-input-label for="model" :value="__('Model')" />
               
                   <select id="model" class="block mt-1 w-full rounded-sm" name="model" :value="old('model')" required autocomplete="model">
-                      <option value="" selected>Pilih Model</option>
+                      <option value="" selected>Pilih Tipe</option>
                       <option value="Model1">Model 1</option>
                       <option value="Model2">Model 2</option>
                       <option value="Model3">Model 3</option>

@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MobilController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\TipeMobilController;
+
 
 
 use Illuminate\Support\Facades\Route;
@@ -28,8 +30,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-})->middleware(['auth', 'verified'])->name('admin.dashboard');
+    return view('admin.dataMobil');
+})->middleware(['auth', 'verified'])->name('admin.dataMobil');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -41,5 +43,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('mobil', MobilController::class);
     Route::resource('customer', CustomerController::class);
     Route::resource('transaksi', CustomerController::class);
+    Route::resource('tipemobil', TipeMobilController::class);
+
 });
 require __DIR__.'/auth.php';

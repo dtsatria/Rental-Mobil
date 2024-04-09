@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\TipeMobil;
 
 
-class MobilController extends Controller
+class TipeMobilController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.dataMobil');
+        //
     }
 
     /**
@@ -20,7 +21,8 @@ class MobilController extends Controller
      */
     public function create()
     {
-        return view('admin.addMobil');
+        $tipeMobil = TipeMobil::all();
+        return view('admin.addTipeMobil', compact('tipeMobil'));
     }
 
     /**
@@ -28,7 +30,14 @@ class MobilController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+    		'tipe' => 'required'
+    	]);
+ 
+        TipeMobil::create([
+    		'tipe' => $request->tipe
+    	]);
+    	return redirect('/tipemobil/create');
     }
 
     /**

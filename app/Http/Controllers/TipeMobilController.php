@@ -78,6 +78,9 @@ class TipeMobilController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $tipeMobil = TipeMobil::find($id);
+        $tipeMobil->delete();
+        return redirect('/tipemobil/create');
+
     }
 }

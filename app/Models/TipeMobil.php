@@ -10,4 +10,9 @@ class TipeMobil extends Model
     use HasFactory;
     protected $table = 'tipemobil';
     protected $fillable = ['tipe'];
+
+    public function mobil()
+    {
+        return $this->hasMany(Mobil::class);
+    }
 }

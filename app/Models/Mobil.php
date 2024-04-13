@@ -11,8 +11,13 @@ class Mobil extends Model
     protected $table = 'mobil';
     protected $fillable = [
         'merk', 
-        'gambar',
-        'kategori_id',
-        'user_id'];
+        'tipemobil_id',
+        'plat_nomor',
+        'tarif'];
 
+
+        public function tipemobil()
+    {
+        return $this->belongsTo(TipeMobil::class);
+    }
 }

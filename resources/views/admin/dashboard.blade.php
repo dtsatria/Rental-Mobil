@@ -33,6 +33,10 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     @yield('adminSection')
+                    @if(Request::is('dashboard'))
+            <h1>Welcome, {{ auth()->user()->name }}</h1>
+        @endif
+
                 </div>
             </div>
         </div>

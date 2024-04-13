@@ -44,6 +44,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('customer', CustomerController::class);
     Route::resource('transaksi', CustomerController::class);
     Route::resource('tipemobil', TipeMobilController::class);
-
 });
 require __DIR__.'/auth.php';

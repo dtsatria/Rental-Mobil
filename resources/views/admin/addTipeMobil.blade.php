@@ -35,7 +35,7 @@ CRUD Tipe Mobil
                         <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Tipe</th>
                         <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">Action</th>
                       </tr>
-                    </thead>
+                    </thead>  
                     <tbody class="divide-y divide-gray-200">
                       @forelse ($tipeMobil as $key => $value)
                       <tr>

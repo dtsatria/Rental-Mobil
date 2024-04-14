@@ -24,7 +24,7 @@ Edit Mobil
                     <select id="tipemobil_id" class="block mt-1 w-full rounded-sm" name="tipemobil_id" value="{{$Mobil->tipemobil_id}}" required autocomplete="tipemobil_id">
                     
                 
-                        <!-- Tambahkan pilihan lainnya sesuai kebutuhan -->
+                  
                         
                         <option value="{{ $Mobil->tipemobil->id }}">{{ $Mobil->tipemobil->tipe }}</option>
                         @if (!$Mobil->tipemobil)

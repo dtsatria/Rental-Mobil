@@ -26,12 +26,12 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('customer.sewaMobil');
+})->middleware(['auth', 'verified'])->name('customer.sewaMobil');
 
 Route::get('/admin/dashboard', function () {
-    return view('admin.dataMobil');
-})->middleware(['auth', 'verified'])->name('admin.dataMobil');
+    return view('mobil.index');
+})->middleware(['auth', 'verified'])->name('mobil.index');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -44,5 +44,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('customer', CustomerController::class);
     Route::resource('transaksi', CustomerController::class);
     Route::resource('tipemobil', TipeMobilController::class);
+    Route::get('/transaksi/{mobil}/sewa', [TransaksiController::class, 'create']);
+    Route::post('/transaksi/{mobil}', [TransaksiController::class, 'store']);
 });
 require __DIR__.'/auth.php';

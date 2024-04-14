@@ -41,7 +41,6 @@ Data Mobil
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{$mobil->merk}}</td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{$mobil->plat_nomor}}</td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{$mobil->tipemobil->tipe}}</td>
-                                            <!-- Assuming 'tipe' is the field that contains the name of the 'Tipe Mobil' -->
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{$mobil->tarif}}K</td>
                                             <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
                                                 <form action="/mobil/{{$mobil->id}}" method="POST">

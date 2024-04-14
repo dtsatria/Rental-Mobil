@@ -22,7 +22,6 @@ CRUD Mobil
                     <select id="tipemobil_id" class="block mt-1 w-full rounded-sm" name="tipemobil_id" :value="old('tipemobil_id')" required autocomplete="tipemobil_id">
                         <option value="" selected>Pilih Tipe</option>
                 
-                        <!-- Tambahkan pilihan lainnya sesuai kebutuhan -->
                         
                         @forelse ($tipeMobil as $key => $value)
                             <option value="{{ $value->id }}">{{ $value->tipe }}</option>

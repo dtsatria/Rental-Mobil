@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Mobil;
+
 
 class CustomerController extends Controller
 {
@@ -11,7 +13,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return view('admin.dataTransaksi');
+        $Mobil = Mobil::with('tipemobil')->get();
+        return view('customer.sewaMobil', compact('Mobil'));      
     }
 
     /**

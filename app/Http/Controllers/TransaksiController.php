@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Mobil;
+use App\Models\Transaksi;
+
 
 class TransaksiController extends Controller
 {
@@ -17,9 +20,11 @@ class TransaksiController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(string $id)
     {
-        //
+        $Mobil = Mobil::find($id);
+
+        return view('customer.transaksi', compact('Mobil'));
     }
 
     /**
@@ -27,7 +32,23 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validasi data input dari formulir
+        $validatedData = $request->validate([
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after:start_date',
+            // tambahkan validasi lainnya sesuai kebutuhan Anda
+        ]);
+
+        // Simpan transaksi ke database
+        Transaksi::create([
+            'mobil_id' => $id,
+            'tanggal_sewa_mulai' => $validatedData['start_date'],
+            'tanggal_sewa_akhir' => $validatedData['end_date'],
+            'status' => 'pending', // Set status ke default 'pending'
+        ]);
+
+        // Redirect pengguna setelah transaksi berhasil disimpan
+        return redirect()->route('customer.transaksi')->with('success', 'Transaksi berhasil disimpan!');
     }
 
     /**

@@ -7,3 +7,5 @@ Projek ini merupakan aplikasi untuk sewa mobil secara online melalui website
 ## Feature
 
 <p align="center"><a href="#" target="_blank"><img src="/public//dokumentasi.jpg" width="400" alt="Laravel Logo"></a></p>
+*gunakan email = admin@gmail.com untuk mengakses CMS
+dan gunakan email lain untuk mengakses sebagai user
